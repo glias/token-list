@@ -1,0 +1,107 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://gliaswap.ckbapp.dev/nervos.schema.json",
+    "title": "Gliaswap sUDT Token List",
+    "description": "Schema for lists of tokens compatible with the Gliaswap Interface",
+    "definitions": {
+        "TypeScript": {
+            "type": "object",
+            "description": "The Type Script of the sUDT",
+            "properties": {
+                "codeHash": {
+                    "type": "string",
+                    "description": "The hash of ELF formatted RISC-V binary that contains a CKB script.",
+                    "pattern": "^0x[a-f0-9]{64}$",
+                    "examples": [
+                        "0xc5e5dcf215925f7ef4dfaf5f4b4f105bc321c02776d6e7d52a1db3fcd9d011a4"
+                    ]
+                },
+                "hashType": {
+                    "type": "string",
+                    "description": "The interpretation of code hash when looking for matched dep cells.",
+                    "examples": [
+                        "type",
+                        "data"
+                    ]
+                },
+                "args": {
+                    "type": "string",
+                    "description": "The argument as the script input.",
+                    "pattern": "^0x[a-f0-9]{64}$",
+                    "examples": [
+                        "0x6fe3733cd9df22d05b8a70f7b505d0fb67fb58fb88693217135ff5079713e902"
+                    ]
+                }
+            },
+            "required": [
+                "codeHash",
+                "hashType",
+                "args"
+            ]
+        },
+        "TokenInfo": {
+            "type": "object",
+            "description": "Metadata for a single token in a token list",
+            "properties": {
+                "typeScript": {
+                    "oneOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "$ref": "#/definitions/TypeScript"
+                        }
+                    ]
+                },
+                "decimals": {
+                    "type": "integer",
+                    "description": "The number of decimals for the token balance",
+                    "minimum": 0,
+                    "maximum": 255,
+                    "examples": [
+                        18
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the token",
+                    "minLength": 1,
+                    "maxLength": 40,
+                    "examples": [
+                        "USD Coin"
+                    ]
+                },
+                "symbol": {
+                    "type": "string",
+                    "description": "The symbol for the token; must be alphanumeric",
+                    "pattern": "^[a-zA-Z0-9+\\-%/\\$]+$",
+                    "minLength": 1,
+                    "maxLength": 20,
+                    "examples": [
+                        "USDC"
+                    ]
+                },
+                "logoURI": {
+                    "type": "string",
+                    "description": "A URI to the token logo asset; if not set, interface will attempt to find a logo based on the token address; suggest SVG or PNG of size 64x64",
+                    "examples": [
+                        "ipfs://QmXfzKRvjZz3u5JRgC4v5mGVbm9ahrUiB4DgzHBsnWbTMM"
+                    ]
+                }
+            },
+            "required": [
+                "typeScript",
+                "decimals",
+                "name",
+                "symbol",
+                "logoURI"
+            ]
+        }
+    },
+    "type": "array",
+    "items": {
+        "$ref": "#/definitions/TokenInfo"
+    },
+    "minItems": 1,
+    "maxItems": 10000
+}
