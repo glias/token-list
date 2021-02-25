@@ -18,4 +18,4 @@ This repo contains the default token list and token list JSON schema used in the
 
 ## Adding a token
 
-To request that we add a token to the list, [file an issue](https://github.com/glia/token-list/issues/new/choose) or creating a pull request.
+To request that we add a token to the list, [file an issue](https://github.com/glias/token-list/issues/new/choose) or creating a pull request.
