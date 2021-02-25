@@ -11,7 +11,7 @@ This repo contains the default token list and token list JSON schema used in the
     │   ├── ropsten.json # token list for Ropsten testnet
     │   └── schema.json # JSON schema for Ethereum token list
     └── nervos
-        ├── aggron.json # token list for Arrgon testnet
+        ├── aggron.json # token list for Aggron testnet
         ├── index.d.ts
         └── schema.json # JSON schema for Nervos token list
 ```
