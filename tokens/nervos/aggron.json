@@ -16,5 +16,16 @@
         "symbol": "GLIA",
         "decimals": 8,
         "logoURI": "https://gliaswaptest.ckbapp.dev/token/glias.png"
+    },
+    {
+        "typeScript": {
+            "codeHash": "0xc5e5dcf215925f7ef4dfaf5f4b4f105bc321c02776d6e7d52a1db3fcd9d011a4",
+            "hashType": "type",
+            "args": "0xab4667fef2ee4b3604bba380418349466792e39b6111b17441f8d04382cb6635"
+        },
+        "name": "PenPen",
+        "symbol": "PenPen",
+        "decimals": 8,
+        "logoURI": ""
     }
 ]
