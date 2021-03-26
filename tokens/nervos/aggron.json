@@ -27,5 +27,16 @@
         "symbol": "PenPen",
         "decimals": 8,
         "logoURI": ""
+    },
+    {
+        "typeScript": {
+            "codeHash": "0xc5e5dcf215925f7ef4dfaf5f4b4f105bc321c02776d6e7d52a1db3fcd9d011a4",
+            "hashType": "type",
+            "args": "0x7de96784419675391b903d85f3037ec5601bd5b8cf581dd994dd255adca00e9c"
+        },
+        "name": "KS Test Token",
+        "symbol": "KSTT",
+        "decimals": 6,
+        "logoURI": ""
     }
 ]
